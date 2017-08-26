@@ -4,5 +4,6 @@
 # Nim things
 nimcache/
 
-# Binaries
+# Binaries (& other temp data files)
 Downloader
+01.HttpClient/index.html

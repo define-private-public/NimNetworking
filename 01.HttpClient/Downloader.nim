@@ -11,6 +11,8 @@ import asyncfile
 ## Downloads a webpage asynchronously and saves it to disk.
 ##   urlToDownload -- Which URL it should download
 ##   filname -- name/path to save the data to
+##
+## NOTE: Nim's HttpClient doesn't support SSL at the moment
 proc downloadWebPage(urlToDownload, filename: string) {.async.} =
   echo("Starting download...")
 
@@ -35,15 +37,13 @@ proc downloadWebPage(urlToDownload, filename: string) {.async.} =
   echo("Done!")
 
 
+# Main runner
+proc main() {.async.} =
+  # Try to download for 5 seconds 
+  var dlTask = downloadWebpage("http://unlicense.org/", "index.html")
+  echo("Holding for at least 5 seconds")
+  discard await withTimeout(dlTask, 5000)
 
 
-#proc main()=
-#  let
-#    urlToDownload = "https://16bpp.net"   # Where to download from
-#    filename = "index.html"               # Where to save it to
-# 
-#  # TODO hold for 5 seconds
-#  asyncCheck downloadWebpage(
-#
-#
-#main()
+# Hold until `main()` is done
+waitFor main()
