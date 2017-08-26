@@ -1,0 +1,7 @@
+# Editor
+*.sw*
+
+# Nim things
+nimcache/
+
+# Binaries
