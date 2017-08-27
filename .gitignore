@@ -6,4 +6,4 @@ nimcache/
 
 # Binaries (& other temp data files)
 Downloader
-01.HttpClient/index.html
+01.AsyncHttpClient/index.html

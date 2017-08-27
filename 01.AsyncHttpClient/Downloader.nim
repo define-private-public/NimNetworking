@@ -23,7 +23,7 @@ proc downloadWebPage(urlToDownload, filename: string) {.async.} =
   var data:string
   try:
     data = await httpClient.getContent(urlToDownload)
-  except HttpRequestError:
+  except:
     # Bad thing happened
     let eMsg = getCurrentExceptionMsg()
     echo("Couldn't download the webpage, reason=" & eMsg)
