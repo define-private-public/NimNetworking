@@ -12,7 +12,7 @@ import asyncfile
 ##   urlToDownload -- Which URL it should download
 ##   filname -- name/path to save the data to
 ##
-## NOTE: Nim's HttpClient doesn't support SSL at the moment
+## NOTE: to use HTTPS, you'll need to add `-d:ssl` to the copmpiler flags
 proc downloadWebPage(urlToDownload, filename: string) {.async.} =
   echo("Starting download...")
 
