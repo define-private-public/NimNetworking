@@ -38,7 +38,7 @@ proc mkPage(viewCount: int; disableSubmit: bool): string=
 
 
 proc handleRequest(req: Request) {.async.}=
-  ## TODO document
+  ## Handle an incomming connection
   var killServer = false
 
   # Incoming!  print some data
