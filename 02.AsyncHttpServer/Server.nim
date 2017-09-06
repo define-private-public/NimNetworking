@@ -25,7 +25,7 @@ proc mkPage(viewCount: int; disableSubmit: bool): string=
 <!DOCTYPE>
 <html>
   <head>
-    <title>HttpListener Example</title>
+    <title>AsyncHttpServer Example</title>
   </head>
   <body>
     <p>Page Views:""" & $viewCount & """</p>
